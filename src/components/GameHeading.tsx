@@ -12,10 +12,12 @@ const GameHeading = ({ gameQuery }: Props) => {
   const genreName = genres?.results.find(
     (x) => x.id == gameQuery.genreId
   )?.name;
+
   const { data: platforms } = usePlatforms();
   const platFormName = platforms?.results.find(
     (x) => x.id == gameQuery.platformId
   )?.name;
+
   const heading = `${platFormName || ""} ${genreName || ""} Games`;
 
   return (
