@@ -16,13 +16,19 @@ const GameDetailPage = () => {
   return (
     <>
       <Box>
-        <Heading>{gameDetails?.name}</Heading>
-        <ExpandableText limit={300}>
-          {gameDetails?.description_raw}
-        </ExpandableText>
-        <GameAttributes gameDetails={gameDetails}></GameAttributes>
-        <GameTrailer gameId={gameDetails.id} />
-        <GameScreenshots gameId={gameDetails.id} />
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={2}>
+          <Box>
+            <Heading>{gameDetails?.name}</Heading>
+            <ExpandableText limit={300}>
+              {gameDetails?.description_raw}
+            </ExpandableText>
+            <GameAttributes gameDetails={gameDetails}></GameAttributes>
+          </Box>
+          <Box>
+            <GameTrailer gameId={gameDetails.id} />
+            <GameScreenshots gameId={gameDetails.id} />
+          </Box>
+        </SimpleGrid>
       </Box>
     </>
   );
