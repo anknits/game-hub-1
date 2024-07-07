@@ -1,6 +1,7 @@
-import { Box, Heading, Text, Spinner } from "@chakra-ui/react";
+import { Box, Heading, Text, Spinner, SimpleGrid } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import ExpandableText from "../components/ExpandableText";
+import GameAttributes from "../components/GameAttributes";
 import useGameDetails from "../hooks/useGameDetails";
 
 const GameDetailPage = () => {
@@ -15,6 +16,7 @@ const GameDetailPage = () => {
       <Box>
         <Heading>{data?.name}</Heading>
         <ExpandableText limit={300}>{data?.description_raw}</ExpandableText>
+        <GameAttributes gameDetails={data}></GameAttributes>
       </Box>
     </>
   );
